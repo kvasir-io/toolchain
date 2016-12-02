@@ -6,7 +6,7 @@ Kvasir toolchain is a cmake based toolchain with support for diffrent micrcocont
 To use Kvasir toolchain you've to add the following lines to your CmakeLists.txt:
 
 First set the path where the toolchain is located:
-`include(compilers/arm-none-eabi.cmake)`
+`set(toolchain /home/carlos/gits/kvasir_toolchain)`
 
 Them you add the compiler file of choice. You could use one of the compilers in the compiler folder or write your own.
 `include(compilers/arm-none-eabi.cmake)`
