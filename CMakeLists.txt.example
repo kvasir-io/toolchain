@@ -4,7 +4,14 @@ project (example CXX)
 
 set(sources main.cpp)
 
+include_directories(        
+	/home/carlos/gits/Kvasir/Lib
+)
 
-include(targets/nordic/nrf52/nrf52.cmake)
+
+
+set(toolchain /home/carlos/gits/kvasir_toolchain)
+
 include(compilers/arm-none-eabi.cmake)
-
+include(targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
+include(targets/arm32/cm4/nordic/nrf/nrf52/flashscripts/nrfjprog.cmake)
