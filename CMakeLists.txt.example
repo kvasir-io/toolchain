@@ -1,0 +1,10 @@
+cmake_minimum_required (VERSION 2.8.11)
+project (example CXX)
+
+
+set(sources main.cpp)
+
+
+include(targets/nordic/nrf52/nrf52.cmake)
+include(compilers/arm-none-eabi.cmake)
+
