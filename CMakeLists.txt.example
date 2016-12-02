@@ -1,7 +1,6 @@
 cmake_minimum_required (VERSION 2.8.11)
 project (example CXX)
 
-
 set(sources main.cpp)
 
 include_directories(        
@@ -9,9 +8,14 @@ include_directories(
 )
 
 
-
+#Where the toolchain is located on your pc.
 set(toolchain /home/carlos/gits/kvasir_toolchain)
 
+#The compiler that is used:
 include(compilers/arm-none-eabi.cmake)
+
+#The target chip that is compiled for:
 include(targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
+
+#The flashscript used to flash the script:
 include(targets/arm32/cm4/nordic/nrf/nrf52/flashscripts/nrfjprog.cmake)
