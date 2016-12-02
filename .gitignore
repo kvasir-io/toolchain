@@ -134,7 +134,3 @@ Mkfile.old
 dkms.conf
 
 
-### Assembler ###
-*.[sS]
-*.bc
-
