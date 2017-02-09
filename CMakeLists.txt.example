@@ -4,7 +4,7 @@ project (example CXX)
 set(sources main.cpp)
 
 # include_directories(
-# 	~/Kvasir/Lib
+# 	/Kvasir/Lib
 # )
 
 # Where the toolchain is located on your pc.
