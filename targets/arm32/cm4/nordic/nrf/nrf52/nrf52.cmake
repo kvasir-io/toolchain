@@ -20,7 +20,7 @@ include_directories(
 add_definitions(-DNRF52)
 
 set(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
+        "${CMAKE_CXX_FLAGS} -Os -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
 )
 
 set(CMAKE_C_FLAGS
@@ -39,4 +39,3 @@ add_executable(${PROJECT_NAME}.elf
 
 add_custom_target(${PROJECT_NAME}.hex DEPENDS ${PROJECT_NAME}.elf COMMAND ${OBJCOPY} -Oihex ${PROJECT_NAME}.elf ${PROJECT_NAME}.hex)
 add_custom_target(${PROJECT_NAME}.bin DEPENDS ${PROJECT_NAME}.elf COMMAND ${OBJCOPY} -Obinary ${PROJECT_NAME}.elf ${PROJECT_NAME}.bin)
-
