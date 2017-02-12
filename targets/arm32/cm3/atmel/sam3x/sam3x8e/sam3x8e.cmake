@@ -15,9 +15,13 @@ include_directories(
         ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps
         ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps/include
         ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps/source/templates
+        ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps/source/templates/gcc
+        ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps/source/templates
         ${toolchain}/targets/arm32/cm3/atmel/sam3x/sam3x8e/deps
         )
 add_definitions(-D__SAM3X8E__)
+add_definitions(-DDONT_USE_CMSIS_INIT)
+
 
 set(CMAKE_CXX_FLAGS
         #"${CMAKE_CXX_FLAGS} -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
@@ -29,11 +33,11 @@ set(CMAKE_C_FLAGS
 )
 
 #Ik geloof dat dat het goeie flash script is
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Tflash.ld")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}-Tflash.ld -Wl,--gc-sections -Wl,--entry=Reset_Handler")
 
 add_executable(${PROJECT_NAME}.elf
+        ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps/source/templates/gcc/startup_sam3x.c
         # ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps/include/sam3x8e.h
-        # ${toolchain}/targets/arm32/cm3/atmel/sam3x/deps/source/templates/gcc/startup_sam3x.c
 	${sources}
 	)
 
