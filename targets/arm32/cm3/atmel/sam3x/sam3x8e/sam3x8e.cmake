@@ -18,7 +18,7 @@ set(DEVICE_LOCATION
 )
 
 set(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -mcpu=cortex-m3 -mthumb -fomit-frame-pointer -march=armv7-m"
+        "${CMAKE_CXX_FLAGS} -mcpu=cortex-m3 -mthumb -fomit-frame-pointer -march=armv7-m -fno-exceptions"
 )
 
 set(CMAKE_C_FLAGS
