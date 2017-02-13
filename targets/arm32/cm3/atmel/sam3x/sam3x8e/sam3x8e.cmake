@@ -13,10 +13,6 @@ include_directories(
 add_definitions(-D__SAM3X8E__)
 add_definitions(-DDONT_USE_CMSIS_INIT)
 
-set(DEVICE_LOCATION
-        "ttyACM0"
-)
-
 set(CMAKE_CXX_FLAGS
         "${CMAKE_CXX_FLAGS} -mcpu=cortex-m3 -mthumb -fomit-frame-pointer -march=armv7-m -fno-exceptions"
 )
