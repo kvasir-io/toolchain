@@ -1,11 +1,12 @@
 # Kvasir::toolchain
 This toolchain is part of the Kvasir project. Kvasir is a collection
 of zero cost statically checked libraries for resource constrained
-systems including microcontrollers. More information at kvasir.io.
+systems including microcontrollers. More information at
+[kvasir.io](http://kvasir.io).
 
 ## Introduction
 Kvasir toolchain is a cmake based toolchain with support for different
-micrcocontrollers. It supports flashing for most supported chips and
+microcontrollers. It supports flashing for most supported chips and
 has the ability to open up a serial window after flashing.
 
 ## How to setup
@@ -76,7 +77,7 @@ chip.
 Try to keep to the current structure and create a pull request to get
 feedback. Thanks in advance.
 
-## Contributers
+## Contributors
 We'd like to thank the following contributors, in alphabetical order:
 
 - Carlos van Rooijen (@CvRXX)
