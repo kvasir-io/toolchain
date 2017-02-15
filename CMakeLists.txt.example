@@ -16,5 +16,5 @@ include(${toolchain}/compilers/arm-none-eabi.cmake)
 # The target chip that is compiled for:
 include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
 
-# The flashscript used to flash the script:
+# The flashscript used to flash the binary (optional):
 include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/flashscripts/nrfjprog.cmake)

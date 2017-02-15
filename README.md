@@ -1,30 +1,89 @@
-# Kvasir toolchain
+# Kvasir::toolchain
+This toolchain is part of the Kvasir project. Kvasir is a collection
+of zero cost statically checked libraries for resource constrained
+systems including microcontrollers. More information at kvasir.io.
 
-Kvasir toolchain is a cmake based toolchain with support for diffrent micrcocontrollers. 
+## Introduction
+Kvasir toolchain is a cmake based toolchain with support for different
+micrcocontrollers. It supports flashing for most supported chips and
+has the ability to open up a serial window after flashing.
 
-## Setting up
-To use Kvasir toolchain you've to add the following lines to your CmakeLists.txt:
+## How to setup
+To use the Kvasir toolchain, copy the
+[example CMakeLists](/CMakeLists.txt.example) to your project
+directory, or add the contents to your existing CMakeLists.txt.
 
-First set the path where the toolchain is located:
-`set(toolchain /home/carlos/gits/kvasir_toolchain)`
+The CMakeLists file contains several parameters that need to be
+adjusted to your environment:
 
-Them you add the compiler file of choice. You could use one of the compilers in the compiler folder or write your own.
-`include(compilers/arm-none-eabi.cmake)`
+```cmake
+# Where the toolchain is located on your pc.
+set(toolchain ~/kvasir_toolchain) # Your path to kvasir-toolchain (this repository).
 
-Include the target you want to build for:
-`include(targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)`
+# The compiler that is used:
+include(${toolchain}/compilers/arm-none-eabi.cmake)
 
-Optionaly you could add a flashscript:
-`include(targets/arm32/cm4/nordic/nrf/nrf52/flashscripts/nrfjprog.cmake)`
+# The target chip that is compiled for:
+include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
 
-## Make targets
-After setting up the toolchain there are multiple make targets that perform diffrent operations.
+# The flashscript used to flash the binary (optional):
+include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/flashscripts/nrfjprog.cmake)
+```
 
-`make`
-Running make without any parameters, the source will be build to a .elf file. 
+For the compiler, target chip and flash script, you can use any of the
+cmake files available in this repository (see Directory Structure), or
+you can add your own.
 
-`make flash`
-If you have included a flashscript you could use make flash to build your sources and flash it to the chip.
+## How to use
+After setting up the CMakeLists.txt file, create a `build` directory
+within your project directory and generate a Makefile using the
+following comands:
+
+```bash
+mkdir build
+cd build
+cmake ..
+```
+
+In your build directory, run `make` to compile the source into an ELF
+file.
+
+If you've included a flash script, running `make flash` will create a
+binary and flash your microcontroller.
+
+## Directory structure
+On the toplevel, the toolchain contains the following two directories:
+
+### `compiler`
+This contains cmake files for setting the compiler toolchain to be used.
+
+### `targets`
+The targets directory contains target cmake files and dependencies for
+specific microcontrollers.
+
+This directory hierarchy is ordered by architecture
+(e.g. `arm32/cm3`), vendor (`atmel`), and then microcontroller model
+(`sam3x/sam3x8e`).
+
+Microcontroller-specific headers, startup code and linker scripts are
+stored in the `deps` folders in the deepest levels of `/targets`. More
+generic dependencies live in `deps` folders on higher levels.
 
 ## Contributing
-If you want to contribute by adding a chip or flashfile please copy one of the excisting chip cmake files and edit it for the new chip. Try to keep to the current structure and create a pull request to get feedback. Thanks in advance.
+If you want to contribute by adding a chip or flash script, please
+copy one of the existing chip cmake files and edit it for the new
+chip.
+Try to keep to the current structure and create a pull request to get
+feedback. Thanks in advance.
+
+## Contributers
+We'd like to thank the following contributors, in alphabetical order:
+
+- Carlos van Rooijen (@CvRXX)
+- Chris Smeele (@cjsmeele)
+- Jan Halsema (@ManDeJan)
+
+## Maintainer
+This library is maintained by Carlos van Rooijen (@CvRXX). Requests
+for push rights could be addressed to him via kvasir (at)
+carlosvanrooijen.nl.
