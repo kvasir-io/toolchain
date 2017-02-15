@@ -84,6 +84,8 @@ We'd like to thank the following contributors, in alphabetical order:
 - Jan Halsema ([@ManDeJan](https://github.com/ManDeJan))
 
 ## Maintainer
-This library is maintained by Carlos van Rooijen (@CvRXX). Requests
-for push rights could be addressed to him via kvasir (at)
-carlosvanrooijen.nl. The maintainer is also the only one who could approve pull requests to master.
+This library is maintained by Carlos van Rooijen
+([@CvRXX](https://github.com/CvRXX)). Requests for push rights could
+be addressed to him via kvasir (at) carlosvanrooijen.nl. The
+maintainer is also the only one who could approve pull requests to
+master.
