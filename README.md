@@ -6,8 +6,7 @@ systems including microcontrollers. More information at
 
 ## Introduction
 Kvasir toolchain is a cmake based toolchain with support for different
-microcontrollers. It supports flashing for most supported chips and
-has the ability to open up a serial window after flashing.
+microcontrollers. It supports flashing for most supported chips.
 
 ## How to setup
 To use the Kvasir toolchain, copy the
@@ -80,9 +79,9 @@ feedback. Thanks in advance.
 ## Contributors
 We'd like to thank the following contributors, in alphabetical order:
 
-- Carlos van Rooijen (@CvRXX)
-- Chris Smeele (@cjsmeele)
-- Jan Halsema (@ManDeJan)
+- Carlos van Rooijen ([@CvRXX](https://github.com/CvRXX))
+- Chris Smeele ([@cjsmeele](https://github.com/cjsmeele))
+- Jan Halsema ([@ManDeJan](https://github.com/ManDeJan))
 
 ## Maintainer
 This library is maintained by Carlos van Rooijen (@CvRXX). Requests
