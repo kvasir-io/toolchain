@@ -1,3 +1,5 @@
+set(CMAKE_SYSTEM_NAME Generic)
+
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 set(OBJCOPY arm-none-eabi-objcopy)

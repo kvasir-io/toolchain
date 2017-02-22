@@ -20,9 +20,6 @@ adjusted to your environment:
 # Where the toolchain is located on your pc.
 set(toolchain ~/kvasir_toolchain) # Your path to kvasir-toolchain (this repository).
 
-# The compiler that is used:
-include(${toolchain}/compilers/arm-none-eabi.cmake)
-
 # The target chip that is compiled for:
 include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
 
@@ -42,8 +39,16 @@ following comands:
 ```bash
 mkdir build
 cd build
-cmake ..
+cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=<YOUR_PATH> ..
 ```
+
+In the above cmake command, replace `<YOUR_PATH>` with a path to the
+compiler toolchain cmake file you wish to use.
+For example, if you've cloned Kvasir toolchain to `~/kvasir-toolchain`
+and your target is `arm-none-eabi`, the command becomes:
+
+    cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE="~/kvasir-toolchain/compilers/arm-none-eabi.cmake" ..
+
 
 In your build directory, run `make` to compile the source into an ELF
 file.

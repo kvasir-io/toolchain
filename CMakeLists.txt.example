@@ -10,9 +10,6 @@ set(sources main.cpp)
 # Where the toolchain is located on your pc.
 set(toolchain ~/kvasir_toolchain) # Your path to kvasir_toolchain
 
-# The compiler that is used:
-include(${toolchain}/compilers/arm-none-eabi.cmake)
-
 # The target chip that is compiled for:
 include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
 
