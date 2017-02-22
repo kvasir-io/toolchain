@@ -4,7 +4,9 @@ if(NOT bossac)
 endif()
 
 set(DEVICE_LOCATION
-        "ttyACM0"
+    "ttyACM0"
+    CACHE STRING
+    "Serial device name"
 )
 
 if(bossac)
