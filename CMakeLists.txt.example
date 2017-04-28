@@ -18,3 +18,6 @@ include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
 
 # The flashscript used to flash the binary (optional):
 include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/flashscripts/nrfjprog.cmake)
+
+# Location of the flash tool if it's not in your path
+#set(flash_program_path ~/bossac)
