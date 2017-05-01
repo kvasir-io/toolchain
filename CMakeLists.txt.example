@@ -10,8 +10,15 @@ set(sources main.cpp)
 # Where the toolchain is located on your pc.
 set(toolchain ~/kvasir_toolchain) # Your path to kvasir_toolchain
 
+# Location of the flash tool if it's not in your path
+#set(flash_program_path ~/bossac) # Your path to the flash tool
+
+# The compiler that is used:
+include(${toolchain}/compilers/arm-none-eabi.cmake)
+
 # The target chip that is compiled for:
 include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/nrf52.cmake)
 
 # The flashscript used to flash the binary (optional):
 include(${toolchain}/targets/arm32/cm4/nordic/nrf/nrf52/flashscripts/nrfjprog.cmake)
+
