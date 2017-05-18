@@ -16,7 +16,7 @@ add_definitions(-DDONT_USE_CMSIS_INIT)
 set(compile_flags "-mcpu=cortex-m3 -mthumb -fomit-frame-pointer -march=armv7-m")
 
 set(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} ${compile_flags} -fnoexceptions"
+        "${CMAKE_CXX_FLAGS} ${compile_flags} -fno-exceptions"
 )
 
 set(CMAKE_C_FLAGS
