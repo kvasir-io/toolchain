@@ -13,12 +13,14 @@ include_directories(
 add_definitions(-D__SAM3X8E__)
 add_definitions(-DDONT_USE_CMSIS_INIT)
 
+set(compile_flags "-mcpu=cortex-m3 -mthumb -fomit-frame-pointer -march=armv7-m")
+
 set(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -mcpu=cortex-m3 -mthumb -fomit-frame-pointer -march=armv7-m -fno-exceptions"
+        "${CMAKE_CXX_FLAGS} ${compile_flags} -fnoexceptions"
 )
 
 set(CMAKE_C_FLAGS
-        "${CMAKE_CXX_FLAGS}"
+        "${CMAKE_C_FLAGS} ${compile_flags}"
 )
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Tsam3x8e_flash.ld -Wl,--gc-sections")
